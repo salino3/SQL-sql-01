@@ -49,5 +49,15 @@ CREATE TABLE persons (
   id INT
   );
   
+   
   DROP TABLE personsV5;
   
+ALTER TABLE personsV4 ADD SURNAME varchar(150);
+
+ALTER TABLE personsV4 RENAME COLUMN surname TO  surnames;
+
+ALTER TABLE personsV4 MODIFY COLUMN surnames varchar(250);
+
+ALTER TABLE personsV4 DROP COLUMN surnames;
+  
+SELECT * FROM personsV4;
