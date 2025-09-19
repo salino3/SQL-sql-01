@@ -61,3 +61,5 @@ ALTER TABLE personsV4 MODIFY COLUMN surnames varchar(250);
 ALTER TABLE personsV4 DROP COLUMN surnames;
   
 SELECT * FROM personsV4;
+
+ 
