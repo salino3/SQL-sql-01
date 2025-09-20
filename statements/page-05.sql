@@ -62,6 +62,7 @@ ON companies.company_id = users.company_id;
 
 SELECT users.name, languages.name 
 FROM users_languages
-INNER JOIN user ON users_languages.user_id = users.user_id
+INNER JOIN users ON users_languages.user_id = users.user_id
 JOIN languages ON user_languages.language_id = languages.language_id;
 
+-- 4..44
