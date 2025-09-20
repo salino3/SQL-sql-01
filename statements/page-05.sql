@@ -53,8 +53,7 @@ ADD COLUMN company_id INT;
 
  SELECT * FROM users 
 INNER JOIN dni
-ON users.user_id = dni.user_id
-;
+ON users.user_id = dni.user_id;
 
 SELECT companies.name, user.name FROM companies 
 JOIN users
@@ -64,4 +63,5 @@ ON companies.company_id = users.company_id;
 SELECT users.name, languages.name 
 FROM users_languages
 INNER JOIN user ON users_languages.user_id = users.user_id
-JOIN languages ON user_languages.language_id = languages.language_id
+JOIN languages ON user_languages.language_id = languages.language_id;
+
