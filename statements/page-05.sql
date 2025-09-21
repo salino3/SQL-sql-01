@@ -65,4 +65,46 @@ FROM users_languages
 INNER JOIN users ON users_languages.user_id = users.user_id
 JOIN languages ON user_languages.language_id = languages.language_id;
 
--- 4..44
+-- Retrieve all rows with values on left table (even from right table is null)
+SELECT
+  u.nombre,
+  p.id
+FROM
+  Usuarios AS u
+LEFT JOIN
+  Pedidos AS p ON u.id = p.usuario_id;
+
+-- Retrieve all rows with values on right table (even from left table is null)
+SELECT
+  u.nombre,
+  p.id
+FROM
+  Usuarios AS u
+RIGHT JOIN
+  Pedidos AS p ON u.id = p.usuario_id; 
+
+-- Retrieve all rows with values on both tables (even from other table is null)
+SELECT
+  u.name,
+  p.id
+FROM
+  Users AS u
+FULL OUTER JOIN
+  Orders AS p ON u.id = p.user_id;
+
+  -- For MySQL use UNION, no allowed FULL OUTER
+  SELECT
+  u.name,
+  p.id
+FROM
+  Users AS u
+LEFT JOIN
+  Orders AS p ON u.id = p.user_id
+UNION
+SELECT
+  u.name,
+  p.id
+FROM
+  Users AS u
+RIGHT JOIN
+  Orders AS p ON u.id = p.user_id;
